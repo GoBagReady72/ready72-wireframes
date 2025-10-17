@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WF01 — Desktop</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%; width: 100%;
+      background: #0f0f10;
+    }
+    .frame-wrap {
+      position: fixed; inset: 0; display: grid; place-items: center;
+    }
+    .device {
+      width: 1440px; height: 900px; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      background: #111; border-radius: 8px; overflow: hidden;
+      transform-origin: top left;
+    }
+    /* scale down to fit smaller viewports while preserving aspect */
+    @media (max-width: 1440px), (max-height: 900px) {
+      .device {
+        transform: scale(min( calc(100vw / 1440), calc(100vh / 900) ));
+      }
+    }
+    iframe {
+      width: 100%; height: 100%; border: 0; display: block; background: white;
+    }
+    .nav {
+      position: fixed; top: 8px; left: 8px; right:8px; display:flex; gap:8px; justify-content:center; z-index: 10;
+      font: 14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    .nav a {
+      text-decoration: none; padding: 6px 10px; background: #1e1f22; color:#eaeaea; border-radius: 6px; opacity:.9;
+    }
+    .nav a:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="../desktop/">Desktop</a>
+    <a href="../tablet/">Tablet</a>
+    <a href="../mobile-portrait/">Mobile Portrait</a>
+    <a href="../mobile-landscape/">Mobile Landscape</a>
+  </div>
+  <div class="frame-wrap">
+    <div class="device">
+      <iframe src="../common/index.html" allowfullscreen loading="eager" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+</body>
+</html>
