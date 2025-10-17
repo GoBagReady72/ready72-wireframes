@@ -5,6 +5,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/play", "destination": "/index.play.html" }
+    { "source": "/play", "destination": "/index.play.html" },
+    { "source": "/set-api", "destination": "/set-api.html" }
   ]
 }

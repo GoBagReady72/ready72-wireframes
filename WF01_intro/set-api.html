@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8">
+<title>Ready72 API Config</title>
+<script>
+  (function () {
+    var qp = new URLSearchParams(location.search);
+    var to = qp.get('to') || '';
+    if (to) {
+      try { localStorage.setItem('ready72_api', to); } catch (e) {}
+    }
+    document.write('<pre>ready72_api = ' + JSON.stringify(localStorage.getItem('ready72_api')) + '</pre>');
+    if (qp.get('redirect') === 'true') {
+      setTimeout(function(){ location.href = '/play'; }, 1000);
+    }
+  }());
+</script>
