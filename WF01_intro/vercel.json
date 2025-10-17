@@ -3,5 +3,8 @@
   "buildCommand": ":",
   "outputDirectory": ".",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/play", "destination": "/index.play.html" }
+  ]
 }
